@@ -37,6 +37,7 @@ class TitleState extends MusicBeatState
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
+	var _pad:FlxVirtualPad;
 
 	var curWacky:Array<String> = [];
 
@@ -201,9 +202,6 @@ class TitleState extends MusicBeatState
 			initialized = true;
 
 		// credGroup.add(credTextShit);
-		_pad = new FlxVirtualPad(FULL, A_B);
-	_pad.alpha = 0.75;
-	this.add(_pad);
 	}
 
 	function getIntroTextShit():Array<Array<String>>
@@ -225,6 +223,9 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		_pad = new FlxVirtualPad(FULL, A_B);
+		_pad.alpha = 0.75;
+		this.add(_pad);
 		Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
 
