@@ -235,7 +235,7 @@ class TitleState extends MusicBeatState
 		}
 
 		// this is for backups var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
-		bind(AButton:"ENTER");
+		bind(AButton:String = "ENTER");
 
 		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
 
