@@ -240,7 +240,7 @@ class TitleState extends MusicBeatState
 
 		if (gamepad != null)
 		{
-			if (_pad.buttonA.START)
+			if (_pad.justPressed.A)
 				pressedEnter = true;
 
 			#if switch
