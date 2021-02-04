@@ -26,4 +26,3 @@ class NGio
  	inline static public function logEvent(event:String) {}
  	inline static public function unlockMedal(id:Int) {}
 }
-#end
