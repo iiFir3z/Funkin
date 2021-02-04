@@ -23,7 +23,6 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
 import polymod.Polymod;
-import flixel.ui.FlxVirtualPad;
 
 using StringTools;
 
@@ -223,9 +222,6 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		_pad = new FlxVirtualPad(FULL, A_B);
-		_pad.alpha = 0.75;
-		this.add(_pad);
 		Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
 
@@ -234,25 +230,12 @@ class TitleState extends MusicBeatState
 			FlxG.fullscreen = !FlxG.fullscreen;
 		}
 
-		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
+		var pressedEnter = FlxG.touches.getFirst();
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
-		if (gamepad != null)
+		if (pressedEnter != null !transitioning && skippedIntro)
 		{
-			if (gamepad.justPressed.A)
-				pressedEnter = true;
-
-			#if switch
-			if (gamepad.justPressed.B)
-				pressedEnter = true;
-			#end
-		}
-
-		if (pressedEnter && !transitioning && skippedIntro)
-		{
-
-
 			titleText.animation.play('press');
 
 			FlxG.camera.flash(FlxColor.WHITE, 1);
