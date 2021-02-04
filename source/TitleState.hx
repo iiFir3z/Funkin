@@ -238,9 +238,10 @@ class TitleState extends MusicBeatState
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
+		var virtbuttonpress = _pad.buttonA.PRESSED;
 		if (gamepad != null)
 		{
-			if _pad.buttonA.PRESSED = 2
+			if (virtbuttonpress = 2)
 				pressedEnter = true;
 
 			#if switch
