@@ -61,6 +61,7 @@ class TitleState extends MusicBeatState
 			NGio.noLogin(APIStuff.API);
 		#else
 			NGio.initNoAPI();
+		#end
 
 		FlxG.save.bind('funkin', 'ninjamuffin99');
 
