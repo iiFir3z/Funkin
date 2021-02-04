@@ -234,7 +234,7 @@ class TitleState extends MusicBeatState
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
-		if (pressedEnter != null !transitioning && skippedIntro)
+		if (pressedEnter != null && !transitioning && skippedIntro)
 		{
 			titleText.animation.play('press');
 
