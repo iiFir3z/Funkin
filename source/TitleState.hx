@@ -23,6 +23,7 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
 import polymod.Polymod;
+import flixel.ui.FlxVirtualPad;
 
 using StringTools;
 
@@ -200,6 +201,9 @@ class TitleState extends MusicBeatState
 			initialized = true;
 
 		// credGroup.add(credTextShit);
+		_pad = new FlxVirtualPad(FULL, A_B);
+	_pad.alpha = 0.75;
+	this.add(_pad);
 	}
 
 	function getIntroTextShit():Array<Array<String>>
@@ -235,7 +239,7 @@ class TitleState extends MusicBeatState
 
 		if (gamepad != null)
 		{
-			if (gamepad.justPressed.START)
+			if (_pad.buttonA.ACCEPT)
 				pressedEnter = true;
 
 			#if switch
