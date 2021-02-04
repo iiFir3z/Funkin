@@ -9,6 +9,7 @@ import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
+import flixel.ui.FlxVirtualPad;
 
 using StringTools;
 
@@ -27,6 +28,7 @@ class FreeplayState extends MusicBeatState
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
+	var _pad:FlxVirtualPad;
 
 	override function create()
 	{
@@ -148,6 +150,9 @@ class FreeplayState extends MusicBeatState
 		 */
 
 		super.create();
+		_pad = new FlxVirtualPad(FULL, A_B);
+	_pad.alpha = 0.65;
+	this.add(_pad);
 	}
 
 	override function update(elapsed:Float)
@@ -166,9 +171,12 @@ class FreeplayState extends MusicBeatState
 
 		scoreText.text = "PERSONAL BEST:" + lerpScore;
 
-		var upP = controls.UP_P;
-		var downP = controls.DOWN_P;
-		var accepted = controls.ACCEPT;
+		var upP = _pad.buttonUp.justPressed;
+		var downP = _pad.buttonDown.justPressed;
+		var LEFT_P = _pad.buttonLeft.justPressed;
+		var RIGHT_P = _pad.buttonRight.justPressed;
+		var accepted = _pad.buttonA.justPressed;
+		var BACK = _pad.buttonB.justPressed;
 
 		if (upP)
 		{

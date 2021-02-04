@@ -11,6 +11,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import lime.app.Application;
+import flixel.ui.FlxVirtualPad;
 
 using StringTools;
 
@@ -18,6 +19,7 @@ class MainMenuState extends MusicBeatState
 {
 	var curSelected:Int = 0;
 
+	var _pad:FlxVirtualPad;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
@@ -93,6 +95,10 @@ class MainMenuState extends MusicBeatState
 		changeItem();
 
 		super.create();
+
+		_pad = new FlxVirtualPad(UP_DOWN, A_B);
+		_pad.alpha = 0.75;
+		this.add(_pad);
 	}
 
 	var selectedSomethin:Bool = false;
@@ -103,6 +109,10 @@ class MainMenuState extends MusicBeatState
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
+		var UP_P = _pad.buttonUp.justPressed;
+		var DOWN_P = _pad.buttonDown.justPressed;
+		var BACK = _pad.buttonB.justPressed;
+		var ACCEPT = _pad.buttonA.justPressed;
 
 		if (!selectedSomethin)
 		{
