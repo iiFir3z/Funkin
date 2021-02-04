@@ -435,7 +435,7 @@ class PlayState extends MusicBeatState
 			bg.scale.set(6, 6);
 			add(bg);
 
-			/* 
+			/*
 				var bg:FlxSprite = new FlxSprite(posX, posY).loadGraphic('assets/images/weeb/evilSchoolBG.png');
 				bg.scale.set(6, 6);
 				// bg.setGraphicSize(Std.int(bg.width * 6));
@@ -457,7 +457,7 @@ class PlayState extends MusicBeatState
 			// bg.shader = wiggleShit.shader;
 			// fg.shader = wiggleShit.shader;
 
-			/* 
+			/*
 				var waveSprite = new FlxEffectSprite(bg, [waveEffectBG]);
 				var waveSpriteFG = new FlxEffectSprite(fg, [waveEffectFG]);
 
@@ -1633,7 +1633,6 @@ class PlayState extends MusicBeatState
 
 				if (SONG.validScore)
 				{
-					NGio.unlockMedal(60961);
 					Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 				}
 
@@ -1817,7 +1816,7 @@ class PlayState extends MusicBeatState
 
 			daLoop++;
 		}
-		/* 
+		/*
 			trace(combo);
 			trace(seperatedScore);
 		 */
@@ -1929,12 +1928,12 @@ class PlayState extends MusicBeatState
 				{
 					noteCheck(controlArray[daNote.noteData], daNote);
 				}
-				/* 
+				/*
 					if (controlArray[daNote.noteData])
 						goodNoteHit(daNote);
 				 */
 				// trace(daNote.noteData);
-				/* 
+				/*
 					switch (daNote.noteData)
 					{
 						case 2: // NOTES YOU JUST PRESSED
